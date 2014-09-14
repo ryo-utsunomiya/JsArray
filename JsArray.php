@@ -38,17 +38,17 @@ class JsArray implements \ArrayAccess
      */
     public function __construct()
     {
-        $args     = func_get_args();
-        $args_len = count($args);
+        $args    = func_get_args();
+        $argsLen = count($args);
 
-        if ($args_len === 1 && is_int($args[0])) { // 引数が1つだけかつ整数の場合
+        if ($argsLen === 1 && is_int($args[0])) { // 引数が1つだけかつ整数の場合
             $this->size = $args[0]; // 引数の値を配列のサイズとみなす
         } else {
-            $this->size = $args_len;
+            $this->size = $argsLen;
         }
 
         $this->data = new \stdClass(); // [] でない点に注意!
-        for ($i = 0; $i < $args_len; $i++) {
+        for ($i = 0; $i < $argsLen; $i++) {
             $this->data->$i = $args[$i];
         }
     }
@@ -321,10 +321,22 @@ class JsArray implements \ArrayAccess
         return $result;
     }
 
+    /**
+     * @todo 実装
+     *
+     * @param      $searchElement
+     * @param null $fromIndex
+     */
     public function indexOf($searchElement, $fromIndex = null)
     {
     }
 
+    /**
+     * @todo 実装
+     *
+     * @param      $searchElement
+     * @param null $fromIndex
+     */
     public function lastIndexOf($searchElement, $fromIndex = null)
     {
     }
