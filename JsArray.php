@@ -54,6 +54,31 @@ class JsArray implements \ArrayAccess
     }
 
     /**
+     * @param $name
+     *
+     * @return int|null
+     */
+    public function __get($name)
+    {
+        switch ($name) {
+            case 'length': // lengthでもサイズを取得できるようにする
+                $ret = $this->size;
+                break;
+            default:
+                $ret = null;
+        }
+        return $ret;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->toString();
+    }
+
+    /**
      * @param int $offset
      *
      * @return bool
