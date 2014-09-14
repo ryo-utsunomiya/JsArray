@@ -8,7 +8,7 @@ Synopsis
 
 ```php
 <?php
-$fruits = new JsArray("Banana", "Orange", "Lemon", "Apple");
+$fruits = new \MyArray\JsArray("Banana", "Orange", "Lemon", "Apple");
 $fruits[] = "Mango";
 echo $fruits[-1]; // "Mango"
 $citrus = $fruits->slice(1, 3);
