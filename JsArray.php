@@ -79,6 +79,14 @@ class JsArray implements \ArrayAccess
     }
 
     /**
+     * @return JsArray
+     */
+    public function __clone()
+    {
+        return $this->cloneSelf();
+    }
+
+    /**
      * @param int $offset
      *
      * @return bool
